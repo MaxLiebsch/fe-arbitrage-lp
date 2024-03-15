@@ -14,28 +14,22 @@ import screenshotVatReturns from '@/images/screenshots/vat-returns.png'
 
 const features = [
   {
-    title: 'Payroll',
-    description:
-      "Keep track of everyone's salaries and whether or not they've been paid. Direct deposit not supported.",
+    title: 'Zeit ist Geld!',
+    description: `Vergiss stundenlanges Durchsuchen verschiedener Online-Händler und Prospekte. arbispotter reduziert den Sourcing-Prozess auf das Wesentliche: den Einkauf! 
+      Mit uns erkennst du auf einen Blick, welche Händler oder Shops Artikel anbieten, die du mit Gewinn auf Amazon, eBay oder anderen Plattformen verkaufen kannst.
+      `,
     image: screenshotPayroll,
   },
   {
-    title: 'Claim expenses',
-    description:
-      "All of your receipts organized into one place, as long as you don't mind typing in the data by hand.",
+    title: 'Vorsprung durch fundierte Daten.',
+    description: `Unsere Technologie ermöglicht es, Produkte nicht nur auf einer, sondern auf mehreren Plattformen gleichzeitig zu vergleichen. Ob es sich um E-Shops, digitalisierte Prospekte oder eBay-Angebote handelt – wir bieten dir die Daten, die du benötigst, um fundierte Entscheidungen zu treffen und deine Margen zu maximieren.`,
     image: screenshotExpenses,
   },
   {
-    title: 'VAT handling',
+    title: 'Alles auf einen Blick',
     description:
-      "We only sell our software to companies who don't deal with VAT at all, so technically we do all the VAT stuff they need.",
+      `Mit unserer einzigartigen Fähigkeit, sowohl Online-Angebote als auch Prospekte mit Bezug auf eBay und Amazon zu analysieren, erhältst du Zugang zu Markteinblicken, die es nirgendwo gibt. Unser Tool deckt ein breites Spektrum an Quellen ab und bietet eine unvergleichliche Perspektive auf potenzielle Arbitrage-Möglichkeiten.`,
     image: screenshotVatReturns,
-  },
-  {
-    title: 'Reporting',
-    description:
-      'Easily export your data into an Excel spreadsheet where you can do whatever the hell you want with it.',
-    image: screenshotReporting,
   },
 ]
 
@@ -76,11 +70,13 @@ export function PrimaryFeatures() {
       <Container className="relative">
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
-            Everything you need to run your books.
+            Schnelle Deals, profitabel und einfach.
           </h2>
           <p className="mt-6 text-lg tracking-tight text-blue-100">
-            Well everything you need if you aren’t that picky about minor
-            details like tax compliance.
+            Schnelligkeit, die richtigen Produkte und profitable Margen sind im
+            Onlinehandel entscheidend. Arbispotter ist dein Algorithmus
+            basiertes Sourcingtool und scannt für dich tausende Produkte in
+            kürzester Zeit. Spare Zeit, Nerven und Geld.
           </p>
         </div>
         <Tab.Group

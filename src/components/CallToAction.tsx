@@ -21,14 +21,15 @@ export function CallToAction() {
       <Container className="relative">
         <div className="mx-auto max-w-lg text-center">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
-            Get started today
+            Für dein Arbitrage-Business
           </h2>
           <p className="mt-4 text-lg tracking-tight text-white">
-            It’s time to take control of your books. Buy our software so you can
-            feel like you’re doing something productive.
+            Registriere dich jetzt und erhalten exklusive Einblicke und Updates
+            zur Plattform. Verwandle dein Arbitrage-Business und sei der
+            Konkurrenz mit arbispotter einen Schritt voraus!
           </p>
           <Button href="/register" color="white" className="mt-10">
-            Get 6 months free
+            Jetzt Platz sichern
           </Button>
         </div>
       </Container>

@@ -6,11 +6,11 @@ import { type Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - TaxPal',
-    default: 'TaxPal - Accounting made simple for small businesses',
+    template: '%s - Arbispotter',
+    default: 'Arbispotter - Move Fast, Earn Easy',
   },
   description:
-    'Most bookkeeping software is accurate, but hard to use. We make the opposite trade-off, and hope you don’t get audited.',
+    'Wir machen Product Sourcing schnell, einfach und intelligent.',
 }
 
 const inter = Inter({
