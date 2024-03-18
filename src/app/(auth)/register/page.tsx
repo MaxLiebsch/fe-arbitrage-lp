@@ -5,12 +5,14 @@ import { SelectField, TextField } from '@/components/Fields'
 import { Logo } from '@/components/Logo'
 import { SlimLayout } from '@/components/SlimLayout'
 import { type Metadata } from 'next'
+import { redirect } from 'next/navigation'
 
 export const metadata: Metadata = {
   title: 'Sign Up',
 }
 
 export default function Register() {
+  redirect('/waiting-list');
   return (
     <SlimLayout>
       <div className="flex">
