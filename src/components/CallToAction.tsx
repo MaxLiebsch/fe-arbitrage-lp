@@ -19,16 +19,16 @@ export function CallToAction() {
         unoptimized
       />
       <Container className="relative">
-        <div className="mx-auto max-w-lg text-center">
-          <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
-            Für dein Arbitrage-Business
+        <div className="mx-auto max-w-5xl text-center">
+          <h2 className="font-display text-3xl tracking-tight text-secondary-950 sm:text-4xl">
+            Transformiere dein Arbitrage-Business und sei der Konkurrenz mit
+            arbispotter einen Schritt voraus! 
           </h2>
-          <p className="mt-4 text-lg tracking-tight text-white">
-            Registriere dich jetzt und erhalten exklusive Einblicke und Updates
-            zur Plattform. Verwandle dein Arbitrage-Business und sei der
-            Konkurrenz mit arbispotter einen Schritt voraus!
+          <p className="mt-4 text-lg tracking-tight text-secondary-950">
+            Registriere dich jetzt und
+            erhalten exklusive Einblicke und Updates zur Plattform.
           </p>
-          <Button href="/register" color="white" className="mt-10">
+          <Button href="/register" color="slate" className="mt-10">
             Jetzt Platz sichern
           </Button>
         </div>

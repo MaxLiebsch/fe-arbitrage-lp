@@ -6,14 +6,14 @@ import { NavLink } from '@/components/NavLink'
 
 export function Footer() {
   return (
-    <footer className="bg-primary-50">
+    <footer className="bg-secondary-100">
       <Container>
         <div className="py-16">
           <Logo className="mx-auto h-10 w-auto" />
           <nav className="mt-10 text-sm" aria-label="quick links">
             <div className="-my-1 flex justify-center gap-x-6">
               <NavLink href="#features">Features</NavLink>
-              <NavLink href="#testimonials">Testimonials</NavLink>
+              {/* <NavLink href="#testimonials">Testimonials</NavLink> */}
               <NavLink href="#pricing">Preise</NavLink>
               <NavLink href="#pricing">Impressum</NavLink>
               <NavLink href="#pricing">Datenschutz</NavLink>

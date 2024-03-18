@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import logoPrimary from '@/images/logos/Logo_primary.png'
+import logoPrimary from '@/images/logos/logo_secondary.svg'
 export function Logo(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <Image src={logoPrimary} alt="Arbispotter" height={70} width={150} />

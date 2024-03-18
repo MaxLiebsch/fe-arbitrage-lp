@@ -18,7 +18,7 @@ const variantStyles = {
   },
   outline: {
     slate:
-      'ring-primary-200 text-secondary-900 hover:text-primary-900 hover:ring-primary-300 active:bg-primary-100 active:text-primary-600 focus-visible:outline-blue-600 focus-visible:ring-primary-300',
+      'ring-primary-200 text-primary-300 hover:text-primary-900 hover:ring-primary-300 active:bg-primary-100 active:text-primary-600 focus-visible:outline-primary-600 focus-visible:ring-primary-300',
     white:
       'ring-primary-400 text-secondary-400 hover:ring-primary-500 active:ring-primary-700 active:text-primary-400 focus-visible:outline-white',
   },
