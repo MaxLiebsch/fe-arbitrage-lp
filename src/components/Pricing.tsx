@@ -79,7 +79,7 @@ function Plan({
       )}
     >
       {featured ? (
-        <span className="absolute -right-10 -top-6 inline-flex items-center rounded-full bg-gray-50 px-8 py-1 text-lg font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
+        <span className="absolute -right-0 -top-5 md:-right-10 md:-top-6 inline-flex items-center rounded-full bg-gray-50 px-8 py-1 text-lg font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
           meist gebucht
         </span>
       ) : (
@@ -130,13 +130,13 @@ export function Pricing() {
       aria-label="Pricing"
       className="relative overflow-hidden bg-secondary-950 py-20 sm:py-32"
     >
-      <div className="absolute bg-no-repeat -left-[43rem] -top-4 h-[180%] w-[180%] bg-secondary-950">
+      <div className="absolute bg-no-repeat -left-[7rem] -top-4 lg:-left-[69rem] lg:-top-4 h-[180%] w-[180%] bg-secondary-950">
         <Image
           className="bg-no-repeat"
           src={backgroundImage}
           alt=""
           fill
-          objectFit="contain"
+          style={{objectFit: "contain"}}
           unoptimized
         />
       </div>
@@ -145,7 +145,7 @@ export function Pricing() {
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
             <span className="relative whitespace-nowrap">
               {/* <SwirlyDoodle className="absolute left-0 top-1/2 h-[1em] w-full fill-secondary-700" /> */}
-              <span className="relative">
+              <span className="whitespace-break-spaces md:whitespace-normal">
                 Transparente Preise ohne versteckte Kosten!
               </span>
             </span>{' '}
