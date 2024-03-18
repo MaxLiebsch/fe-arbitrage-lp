@@ -1,4 +1,3 @@
-'use client'
 import { CallToAction } from '@/components/CallToAction'
 import { FAQSimple } from '@/components/FAQSimple'
 import { Faqs } from '@/components/Faqs'
@@ -12,16 +11,6 @@ import { Testimonials } from '@/components/Testimonials'
 import { useEffect } from 'react'
 
 export default function Home() {
-  useEffect(() => {
-    var docWidth = document.documentElement.offsetWidth
-
-    ;[].forEach.call(document.querySelectorAll('*'), function (el) {
-      if (el)
-        if ((el as HTMLElement).offsetWidth > docWidth) {
-          console.log("el",el)
-        }
-    })
-  }, [])
   return (
     <>
       <Header />
