@@ -27,8 +27,7 @@ const features = [
   },
   {
     title: 'Alles auf einen Blick',
-    description:
-      `Mit unserer einzigartigen Fähigkeit, sowohl Online-Angebote als auch Prospekte mit Bezug auf eBay und Amazon zu analysieren, erhältst du Zugang zu Markteinblicken, die es nirgendwo gibt. Unser Tool deckt ein breites Spektrum an Quellen ab und bietet eine unvergleichliche Perspektive auf potenzielle Arbitrage-Möglichkeiten.`,
+    description: `Mit unserer einzigartigen Fähigkeit, sowohl Online-Angebote als auch Prospekte mit Bezug auf eBay und Amazon zu analysieren, erhältst du Zugang zu Markteinblicken, die es nirgendwo gibt. Unser Tool deckt ein breites Spektrum an Quellen ab und bietet eine unvergleichliche Perspektive auf potenzielle Arbitrage-Möglichkeiten.`,
     image: screenshotVatReturns,
   },
 ]
@@ -126,9 +125,12 @@ export function PrimaryFeatures() {
                         {feature.description}
                       </p>
                     </div>
-                    <div className="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
+                    <div className="relative mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
+                      <div className="absolute h-full w-full flex items-center justify-center text-black">
+                        <div className='text-black text-center text-3xl z-50'>Coming soon :)</div>
+                      </div>
                       <Image
-                        className="w-full"
+                        className="w-full blur-lg"
                         src={feature.image}
                         alt=""
                         priority
