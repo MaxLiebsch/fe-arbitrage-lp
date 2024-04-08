@@ -27,8 +27,7 @@ const features = [
   },
   {
     title: 'Alles auf einen Blick',
-    description:
-      `Mit unserer einzigartigen Fähigkeit, sowohl Online-Angebote als auch Prospekte mit Bezug auf eBay und Amazon zu analysieren, erhältst du Zugang zu Markteinblicken, die es nirgendwo gibt. Unser Tool deckt ein breites Spektrum an Quellen ab und bietet eine unvergleichliche Perspektive auf potenzielle Arbitrage-Möglichkeiten.`,
+    description: `Mit unserer einzigartigen Fähigkeit, sowohl Online-Angebote als auch Prospekte mit Bezug auf eBay und Amazon zu analysieren, erhältst du Zugang zu Markteinblicken, die es nirgendwo gibt. Unser Tool deckt ein breites Spektrum an Quellen ab und bietet eine unvergleichliche Perspektive auf potenzielle Arbitrage-Möglichkeiten.`,
     image: screenshotVatReturns,
   },
 ]
@@ -57,16 +56,8 @@ export function PrimaryFeatures() {
     <section
       id="features"
       aria-label="Features for running your books"
-      className="relative overflow-hidden bg-blue-600 pb-28 pt-20 sm:py-32"
+      className="relative overflow-hidden bg-secondary-950 pb-28 pt-20 sm:py-32"
     >
-      <Image
-        className="absolute left-1/2 top-1/2 max-w-none translate-x-[-44%] translate-y-[-42%]"
-        src={backgroundImage}
-        alt=""
-        width={2245}
-        height={1636}
-        unoptimized
-      />
       <Container className="relative">
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
@@ -134,9 +125,12 @@ export function PrimaryFeatures() {
                         {feature.description}
                       </p>
                     </div>
-                    <div className="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
+                    <div className="relative mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
+                      <div className="absolute h-full w-full flex items-center justify-center text-black">
+                        <div className='text-black text-center text-3xl z-50'>Coming soon :)</div>
+                      </div>
                       <Image
-                        className="w-full"
+                        className="w-full blur-lg"
                         src={feature.image}
                         alt=""
                         priority

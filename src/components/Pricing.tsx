@@ -2,6 +2,9 @@ import clsx from 'clsx'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
+import { ReactNode } from 'react'
+import Image from 'next/image'
+import backgroundImage from '@/images/background-pricing.svg'
 
 function SwirlyDoodle(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -58,8 +61,8 @@ function Plan({
   features,
   featured = false,
 }: {
-  name: string
-  price: string
+  name: ReactNode
+  price: ReactNode
   description: string
   href: string
   features: Array<string>
@@ -68,16 +71,23 @@ function Plan({
   return (
     <section
       className={clsx(
-        'flex flex-col rounded-3xl px-6 sm:px-8',
-        featured ? 'order-first bg-secondary-600 py-8 lg:order-none' : 'lg:py-8',
+        'relative',
+        'flex flex-col items-center rounded-3xl px-6 sm:px-8',
+        featured
+          ? 'order-first bg-gradient-to-t from-secondary-800 to-secondary-400 py-8 lg:order-none'
+          : 'border border-primary-400 lg:py-8',
       )}
     >
-      <h3 className="mt-5 font-display text-lg text-white">{name}</h3>
+      {featured ? (
+        <span className="absolute -right-0 -top-5 md:-right-10 md:-top-6 inline-flex items-center rounded-full bg-gray-50 px-8 py-1 text-lg font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
+          meist gebucht
+        </span>
+      ) : (
+        <></>
+      )}
+      <h3 className="font-display text-lg text-white">{name}</h3>
       <p
-        className={clsx(
-          'mt-2 text-base',
-          featured ? 'text-white' : 'text-primary-400',
-        )}
+        className={clsx('mt-2 text-xl', featured ? 'text-white' : 'text-white')}
       >
         {description}
       </p>
@@ -93,7 +103,9 @@ function Plan({
       >
         {features.map((feature) => (
           <li key={feature} className="flex">
-            <CheckIcon className={featured ? 'text-white' : 'text-primary-400'} />
+            <CheckIcon
+              className={featured ? 'text-white' : 'text-primary-400'}
+            />
             <span className="ml-4">{feature}</span>
           </li>
         ))}
@@ -101,11 +113,11 @@ function Plan({
       <Button
         href={href}
         variant={featured ? 'solid' : 'outline'}
-        color="white"
+        color={'slate'}
         className="mt-8"
         aria-label={`Get started with the ${name} plan for ${price}`}
       >
-        Get started
+        Jetzt starten
       </Button>
     </section>
   )
@@ -116,53 +128,69 @@ export function Pricing() {
     <section
       id="pricing"
       aria-label="Pricing"
-      className="bg-primary-900 py-20 sm:py-32"
+      className="relative overflow-hidden bg-secondary-950 py-20 sm:py-32"
     >
+      <div className="absolute bg-no-repeat -left-[7rem] -top-4 lg:-left-[69rem] lg:-top-4 h-[180%] w-[180%] bg-secondary-950">
+        <Image
+          className="bg-no-repeat"
+          src={backgroundImage}
+          alt=""
+          fill
+          style={{objectFit: "contain"}}
+          unoptimized
+        />
+      </div>
       <Container>
         <div className="md:text-center">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
             <span className="relative whitespace-nowrap">
-              <SwirlyDoodle className="absolute left-0 top-1/2 h-[1em] w-full fill-secondary-700" />
-              <span className="relative">Einfache Preisgestaltung,</span>
+              {/* <SwirlyDoodle className="absolute left-0 top-1/2 h-[1em] w-full fill-secondary-700" /> */}
+              <span className="whitespace-break-spaces md:whitespace-normal">
+                Transparente Preise ohne versteckte Kosten!
+              </span>
             </span>{' '}
-            für alle.
           </h2>
-          <p className="mt-4 text-lg text-primary-400">
-            Es spielt keine Rolle, wie groß Ihr Unternehmen ist, unsere
-            Plattform wird nicht gut für Sie funktionieren.
-          </p>
+          <div className="relative flex justify-center">
+            <p className="mt-4 max-w-2xl text-lg text-white">
+              Wir ermöglichen mit unseren einfachen Preismodellen volle
+              Flexibilität. Starte jetzt und sicher dir für kurze Zeit exklusive
+              Rabatte.
+            </p>
+          </div>
         </div>
-        <div className="-mx-4 mt-16 grid max-w-2xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-3 xl:mx-0 xl:gap-x-8">
+        <div className="-mx-4 mt-16 grid max-w-2xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-2 xl:mx-0 xl:gap-x-8">
           <Plan
-            name="Starter"
-            price="$9"
-            description="Good for anyone who is self-employed and just getting started."
+            name={
+              <div className="text-silver-chalice-400 text-3xl line-through">
+                298€
+              </div>
+            }
+            price={
+              <div>
+                149€/<span className="text-3xl">Monat</span>
+              </div>
+            }
+            description="monatlich kündbar"
             href="/register"
-            features={[
-              'Send 10 quotes and invoices',
-              'Connect up to 2 bank accounts',
-              'Track up to 15 expenses per month',
-              'Manual payroll support',
-              'Export up to 3 reports',
-            ]}
+            features={[]}
           />
           <Plan
             featured
-            name="Small business"
-            price="$15"
-            description="Perfect for small / medium sized businesses."
+            name={
+              <div className="text-silver-chalice-300 text-3xl line-through">
+                199€
+              </div>
+            }
+            price={
+              <div>
+                99€/<span className="text-3xl">Monat</span>
+              </div>
+            }
+            description="im Abo"
             href="/register"
-            features={[
-              'Send 25 quotes and invoices',
-              'Connect up to 5 bank accounts',
-              'Track up to 50 expenses per month',
-              'Automated payroll support',
-              'Export up to 12 reports',
-              'Bulk reconcile transactions',
-              'Track in multiple currencies',
-            ]}
+            features={[]}
           />
-          <Plan
+          {/* <Plan
             name="Enterprise"
             price="349€"
             description="For even the biggest enterprise companies."
@@ -174,7 +202,7 @@ export function Pricing() {
               'Automated payroll support',
               'Export up to 25 reports, including TPS',
             ]}
-          />
+          /> */}
         </div>
       </Container>
     </section>

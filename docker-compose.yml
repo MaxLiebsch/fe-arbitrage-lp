@@ -1,0 +1,12 @@
+services:
+  nextjs-service:
+    labels:
+      - 'traefik.enabled=true'
+    build: .
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=production
+networks:
+  traefik_web:
+    external: true

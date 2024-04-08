@@ -1,4 +1,5 @@
 import { CallToAction } from '@/components/CallToAction'
+import { FAQSimple } from '@/components/FAQSimple'
 import { Faqs } from '@/components/Faqs'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
@@ -7,6 +8,7 @@ import { Pricing } from '@/components/Pricing'
 import { PrimaryFeatures } from '@/components/PrimaryFeatures'
 import { SecondaryFeatures } from '@/components/SecondaryFeatures'
 import { Testimonials } from '@/components/Testimonials'
+import { useEffect } from 'react'
 
 export default function Home() {
   return (
@@ -15,11 +17,11 @@ export default function Home() {
       <main>
         <Hero />
         <PrimaryFeatures />
-        <SecondaryFeatures />
         <CallToAction />
-        <Testimonials />
         <Pricing />
-        <Faqs />
+        {/* <SecondaryFeatures /> */}
+        <FAQSimple />
+        {/* <Faqs /> */}
       </main>
       <Footer />
     </>
