@@ -3,7 +3,7 @@ import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import React from 'react'
 
-const page = () => {
+const Page = () => {
   return (
     <>
       <Header />
@@ -616,4 +616,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
