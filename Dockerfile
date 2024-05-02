@@ -1,31 +1,34 @@
-FROM node:20 as build
+FROM node:20-slim as build
 
 ENV PATH $PATH:/app/node_modules/.bin
+
 
 WORKDIR /app
 
+COPY [".env", "/app"]
 COPY . .
-# COPY [".env", "/app"]
 
-RUN yarn
+COPY package.json ./
 
-RUN echo `node -v`
-RUN echo `ls /app/node_modules`
+RUN yarn install
+RUN yarn add sharp --ignore-engines
 
-RUN yarn build /app
+RUN export NEXT_SHARP_PATH=/app/node_modules/sharp && \
+yarn build /app
 
-FROM node:20-alpine as prod
+FROM node:20-slim as prod
 
 ENV PATH $PATH:/app/node_modules/.bin
-ENV NODE_ENV=production
 
-EXPOSE 3000/tcp
+ARG PORT=3001
+RUN echo $PORT
+
+EXPOSE ${PORT}/tcp
 
 WORKDIR /app
 
 COPY --from=build /app/node_modules node_modules
-COPY --from=build /app/next.config.js ./
+COPY --from=build /app/.env ./
 COPY --from=build /app/.next .next
-COPY --from=build /app/public public
 
-ENTRYPOINT ["next", "start", "-p", "3000"]
+ENTRYPOINT ["next", "start", "-p", "3001"]
