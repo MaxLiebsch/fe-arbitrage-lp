@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 }
 
 export default function Register() {
-  redirect('/waiting-list');
+  redirect('/app/auth/signup');
   return (
     <SlimLayout>
       <div className="flex">
@@ -26,10 +26,10 @@ export default function Register() {
       <p className="mt-2 text-sm text-gray-700">
         Already registered?{' '}
         <Link
-          href="/login"
+          href="/app/auth/signin"
           className="font-medium text-blue-600 hover:underline"
         >
-          Sign in
+          Log in
         </Link>{' '}
         to your account.
       </p>
