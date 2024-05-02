@@ -9,8 +9,10 @@ COPY . .
 COPY package.json ./
 
 RUN yarn install
+RUN yarn add sharp --ignore-engines
 
-RUN yarn build /app
+RUN export NEXT_SHARP_PATH=/app/node_modules/sharp && \
+    yarn build /app
 
 FROM node:20-slim as prod
 
@@ -22,6 +24,5 @@ WORKDIR /app
 
 COPY --from=build /app/node_modules node_modules
 COPY --from=build /app/.next .next
-COPY --from=build /app/public public
 
 ENTRYPOINT ["next", "start"]
