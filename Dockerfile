@@ -25,4 +25,4 @@ WORKDIR /app
 COPY --from=build /app/node_modules node_modules
 COPY --from=build /app/.next .next
 
-ENTRYPOINT ["next", "start" "-p", "3001"]
+ENTRYPOINT ["next", "start", "-p", "3001"]
