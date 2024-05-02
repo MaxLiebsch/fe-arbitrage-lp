@@ -4,14 +4,14 @@ const env = process.env.NODE_ENV
 const environment = process.env.ENVIRONMENT
 let containerName =
   environment === 'STAGING' ? 'staging-staging-1' : 'live-live-1'
-let port = environment === 'STAGING' ? 3000 : 4000
+
 
 let APP_URL
 
 if (env == 'development') {
-  APP_URL = `http://localhost:${port}`
+  APP_URL = `http://localhost:3000`
 } else if (env == 'production') {
-  APP_URL = `http://${containerName}:${port}`
+  APP_URL = `http://${containerName}:3000`
 }
 
 const nextConfig = {
