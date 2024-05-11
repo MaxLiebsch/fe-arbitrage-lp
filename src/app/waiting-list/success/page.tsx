@@ -1,6 +1,5 @@
-import { TextField } from '@/components/Fields'
+import { Button } from '@/components/Button'
 import { Logo } from '@/components/Logo'
-import NLForm from '@/components/NLForm'
 import { SlimLayout } from '@/components/SlimLayout'
 import Link from 'next/link'
 import React from 'react'
@@ -14,9 +13,13 @@ const Page = () => {
         </Link>
       </div>
       <h2 className="mt-20 text-lg font-semibold text-gray-900">
-        Jetzt Platz sichern
+        Vielen Dank. Wir haben deine Reservierung erhalten. Bitte prüfe dein
+        Postfach und bestätige deine E-Mail-Adresse.
       </h2>
-      <NLForm />
+      <p className="mt-3">Dein Team von Arbispotter.com</p>
+      <Button href="/" className="mt-10">
+        Zurück
+      </Button>
     </SlimLayout>
   )
 }

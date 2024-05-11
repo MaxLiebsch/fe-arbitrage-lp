@@ -89,7 +89,7 @@ function MobileNavigation() {
             {/* <MobileNavLink href="#testimonials">Testimonials</MobileNavLink> */}
             <MobileNavLink href="#pricing">Preise</MobileNavLink>
             {/* <hr className="m-2 border-slate-300/40" /> */}
-            <MobileNavLink href="/app/auth/signin">Log in</MobileNavLink>
+            {/* <MobileNavLink href="/app/auth/signin">Log in</MobileNavLink> */}
           </Popover.Panel>
         </Transition.Child>
       </Transition.Root>
@@ -113,12 +113,12 @@ export function Header() {
             </div>
           </div>
           <div className="flex items-center gap-x-5 md:gap-x-8">
-            <div className="hidden md:block">
+            {/* <div className="hidden md:block">
               <NavLink href="/app/auth/signin">Log in</NavLink>
-            </div>
-            <Button href="/app/auth/signup" color="blue">
+            </div> */}
+            <Button href="/register" color="blue">
               <span>
-                Jetzt <span className="hidden lg:inline">starten</span>
+                Jetzt <span className="hidden lg:inline">Platz sichern</span>
               </span>
             </Button>
             <div className="-mr-1 md:hidden">
