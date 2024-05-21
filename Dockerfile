@@ -10,8 +10,11 @@ COPY . .
 
 COPY package.json ./
 
+RUN apt-get update && apt-get install -y ca-certificates
+RUN update-ca-certificates
+
 RUN yarn install
-RUN yarn add sharp --ignore-engines
+RUN yarn add sharp@v0.33.3 --ignore-engines
 
 RUN export NEXT_SHARP_PATH=/app/node_modules/sharp && \
 yarn build /app
