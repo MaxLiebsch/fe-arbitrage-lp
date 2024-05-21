@@ -91,9 +91,9 @@ function Plan({
       >
         {description}
       </p>
-      <p className="order-first font-display text-5xl font-light tracking-tight text-white">
+      <div className="order-first font-display text-5xl font-light tracking-tight text-white">
         {price}
-      </p>
+      </div>
       <ul
         role="list"
         className={clsx(
