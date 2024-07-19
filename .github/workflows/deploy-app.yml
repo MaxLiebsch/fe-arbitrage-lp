@@ -1,0 +1,43 @@
+name: Deploy landing page
+on:
+  push:
+    branches:
+      - staging
+      - main
+jobs:
+  deploy-lp-staging:
+    if: github.ref == 'refs/heads/staging'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy lp-staging
+        timeout-minutes: 30
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{secrets.HOST}}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.DEPLOY_FE_PK }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+          command_timeout: 30m
+          script: |
+            docker image prune -a -f
+            git --work-tree=/etc/docker/container/lp --git-dir=/etc/docker/container/lp/.git pull
+            cd /etc/docker/container/lp
+            docker compose -f docker-compose.lp-staging.yml up --build -d
+  deploy-lp-live:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy lp-live
+        timeout-minutes: 30
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{secrets.HOST}}
+          command_timeout: 30m
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.DEPLOY_FE_PK }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+          script: |
+            docker image prune -a -f
+            git --work-tree=/etc/docker/container/lp-live --git-dir=/etc/docker/container/lp-live/.git pull
+            cd /etc/docker/container/lp-live
+            docker compose -f docker-compose.lp-live.yml up --build -d
