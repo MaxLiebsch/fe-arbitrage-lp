@@ -7,7 +7,7 @@ import { Pricing } from '@/components/Pricing'
 import { PrimaryFeatures } from '@/components/PrimaryFeatures'
 import { SecondaryFeatures } from '@/components/SecondaryFeatures'
 import { Testimonials } from '@/components/Testimonials'
-import { useEffect } from 'react'
+import Script from 'next/script'
 
 export default function Home() {
   return (
@@ -21,6 +21,24 @@ export default function Home() {
         {/* <SecondaryFeatures /> */}
         <FAQSimple />
         {/* <Faqs /> */}
+        <Script id="chatwood">
+          {`
+      (function(d,t) {
+        var BASE_URL="https://app.chatwoot.com";
+        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=BASE_URL+"/packs/js/sdk.js";
+        g.defer = true;
+        g.async = true;
+        s.parentNode.insertBefore(g,s);
+        g.onload=function(){
+          window.chatwootSDK.run({
+            websiteToken: 'VEsfYg2xaejGmiArkzgJpvPq',
+            baseUrl: BASE_URL
+          })
+        }
+      })(document,"script");
+       `}
+        </Script>
       </main>
       <Footer />
     </>
