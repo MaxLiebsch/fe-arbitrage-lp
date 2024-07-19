@@ -31,10 +31,16 @@ export default function Home() {
         g.async = true;
         s.parentNode.insertBefore(g,s);
         g.onload=function(){
+          window.chatwootSettings = {
+            hideMessageBubble: false,
+            position: 'right', // This can be left or right
+            locale: 'de', // Language to be set
+            type: 'standard', // [standard, expanded_bubble]
+          };
           window.chatwootSDK.run({
             websiteToken: 'VEsfYg2xaejGmiArkzgJpvPq',
             baseUrl: BASE_URL
-          })
+          });
         }
       })(document,"script");
        `}
