@@ -12,7 +12,7 @@ services:
         - "traefik.http.middlewares.lp-liveheaders.headers.customrequestheaders.X-Forwarded-Proto=https"
         - "traefik.http.middlewares.lp-liveheaders.headers.customrequestheaders.X-Forwarded-Host=$$host"
         - "traefik.http.middlewares.lp-liveheaders.headers.customrequestheaders.X-Frame-Options=SAMEORIGIN"
-       networks:
+      networks:
         - traefik_web
 networks:
   traefik_web:
