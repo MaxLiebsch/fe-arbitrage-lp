@@ -1,7 +1,7 @@
 import { Container } from '@/components/Container'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
-import TermsComponent from '@/components/TermsComponent'
+import PrivacyComponent from '@/components/PrivacyComponent'
 import React from 'react'
 
 const Page = () => {
@@ -10,7 +10,7 @@ const Page = () => {
       <Header />
       <main>
         <Container className="pt-4Z pb-16">
-          <TermsComponent/>
+          <PrivacyComponent />
         </Container>
       </main>
       <Footer />
