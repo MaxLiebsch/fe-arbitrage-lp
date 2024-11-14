@@ -1,11 +1,15 @@
-import { TextField } from '@/components/Fields'
+'use client'
+import { Button } from '@/components/Button'
 import { Logo } from '@/components/Logo'
-import NLForm from '@/components/NLForm'
+
 import { SlimLayout } from '@/components/SlimLayout'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const Page = () => {
+  useEffect(()=> {
+    localStorage.removeItem('ckid')
+  },[])
   return (
     <SlimLayout>
       <div className="flex">
@@ -14,9 +18,13 @@ const Page = () => {
         </Link>
       </div>
       <h2 className="mt-20 text-lg font-semibold text-gray-900">
-        Jetzt starten
+        Vielen Dank. Email wurde erfolgreich bestätigt.
       </h2>
-      <NLForm />
+      <p className="mt-3">Dein Team von Arbispotter.com</p>
+      <Button href="/" className="mt-10">
+        Zurück
+      </Button>
+      
     </SlimLayout>
   )
 }

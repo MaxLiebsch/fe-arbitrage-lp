@@ -24,7 +24,7 @@ export default function Login() {
       <h2 className="mt-20 text-lg font-semibold text-gray-900">
         Sign in to your account
       </h2>
-      <p className="mt-2 text-sm text-gray-700">
+      <div className="mt-2 text-sm text-gray-700">
         Don’t have an account?{' '}
         <Link
           href="/register"
@@ -33,7 +33,7 @@ export default function Login() {
           Sign up
         </Link>{' '}
         for a free trial.
-      </p>
+      </div>
       <form action="#" className="mt-10 grid grid-cols-1 gap-y-8">
         <TextField
           label="Email address"

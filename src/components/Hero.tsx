@@ -31,7 +31,7 @@ export function Hero() {
         Sei von Beginn an dabei und registriere dich jetzt!
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
-        <Button href="/register">Jetzt starten</Button>
+        <Button href="/register">Jetzt Platz sichern</Button>
         {/* <Button
           href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
           variant="outline"

@@ -6,7 +6,7 @@ on:
       - main
 jobs:
   deploy-lp-staging:
-    if: github.ref == 'refs/heads/staging'
+    if: ${{ github.ref_name == 'staging' }}
     runs-on: ubuntu-latest
     steps:
       - name: Deploy lp-staging
@@ -19,12 +19,12 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           command_timeout: 30m
           script: |
-            docker image prune -a -f
+            docker builder prune -f
             git --work-tree=/etc/docker/container/lp --git-dir=/etc/docker/container/lp/.git pull
             cd /etc/docker/container/lp
             docker compose -f docker-compose.lp-staging.yml up --build -d
   deploy-lp-live:
-    if: github.ref == 'refs/heads/main'
+    if: ${{ github.ref_name == 'main' }}
     runs-on: ubuntu-latest
     steps:
       - name: Deploy lp-live
@@ -32,12 +32,12 @@ jobs:
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{secrets.HOST}}
-          command_timeout: 30m
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.DEPLOY_FE_PK }}
           passphrase: ${{ secrets.PASSPHRASE }}
+          command_timeout: 30m
           script: |
-            docker image prune -a -f
+            docker builder prune -f
             git --work-tree=/etc/docker/container/lp-live --git-dir=/etc/docker/container/lp-live/.git pull
             cd /etc/docker/container/lp-live
             docker compose -f docker-compose.lp-live.yml up --build -d
