@@ -14,7 +14,7 @@ const Page = () => {
         </Link>
       </div>
       <h2 className="mt-20 text-lg font-semibold text-gray-900">
-        Jetzt Platz sichern
+        Jetzt starten
       </h2>
       <NLForm />
     </SlimLayout>

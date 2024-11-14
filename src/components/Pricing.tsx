@@ -79,7 +79,7 @@ function Plan({
       )}
     >
       {featured ? (
-        <span className="absolute -right-0 -top-5 md:-right-10 md:-top-6 inline-flex items-center rounded-full bg-gray-50 px-8 py-1 text-lg font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
+        <span className="absolute -right-0 -top-5 md:-right-6 md:-top-6 inline-flex items-center rounded-full bg-gray-50 px-8 py-1 text-lg font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
           meist gebucht
         </span>
       ) : (
@@ -160,14 +160,16 @@ export function Pricing() {
         </div>
         <div className="-mx-4 mt-16 grid max-w-2xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-2 xl:mx-0 xl:gap-x-8">
           <Plan
+            featured
             name={
               <div className="text-silver-chalice-400 text-3xl line-through">
-                298€
+                199€
               </div>
             }
             price={
-              <div>
+              <div className='relative'>
                 149€/<span className="text-3xl">Monat</span>
+                <span className='text-xs absolute -bottom-2 -right-1'>exkl. MwSt.</span>
               </div>
             }
             description="monatlich kündbar"
@@ -175,15 +177,16 @@ export function Pricing() {
             features={[]}
           />
           <Plan
-            featured
+
             name={
               <div className="text-silver-chalice-300 text-3xl line-through">
-                199€
+                149€
               </div>
             }
             price={
-              <div>
+              <div className='relative'>
                 99€/<span className="text-3xl">Monat</span>
+                <span className='text-xs absolute -bottom-2 -right-1'>exkl. MwSt.</span>
               </div>
             }
             description="im Abo"

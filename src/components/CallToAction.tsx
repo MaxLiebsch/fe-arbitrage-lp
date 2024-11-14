@@ -29,7 +29,7 @@ export function CallToAction() {
             erhalten exklusive Einblicke und Updates zur Plattform.
           </p>
           <Button href="/register" color="slate" className="mt-10">
-            Jetzt Platz sichern
+            Jetzt starten
           </Button>
         </div>
       </Container>
