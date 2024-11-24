@@ -6,6 +6,22 @@ import { ReactNode } from 'react'
 import Image from 'next/image'
 import backgroundImage from '@/images/background-pricing.svg'
 
+const features = [
+  `Unterstützte Platformen:
+  <ul>
+  <li>- Amazon</li>
+  <li>- Ebay</li>
+  <li>- Kaufland (Coming soon)</li></ul>`,
+
+  'Onlineshop-Vergleich (über 1,4 Millionen Produkte)',
+  'Sales-Monitor',
+  'Amazon Flips',
+  'Wholesale Analyse / Großhandellisten Analyse',
+  'KI-gestützte Matchvalidierung und Bündelerkennung',
+  'Export zu ArbitrageOne',
+  'Kostenloser Support',
+]
+
 function SwirlyDoodle(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg
@@ -79,7 +95,7 @@ function Plan({
       )}
     >
       {featured ? (
-        <span className="absolute -right-0 -top-5 md:-right-6 md:-top-6 inline-flex items-center rounded-full bg-gray-50 px-8 py-1 text-lg font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
+        <span className="absolute -right-0 -top-5 inline-flex items-center rounded-full bg-gray-50 px-8 py-1 text-lg font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 md:-right-6 md:-top-6">
           meist gebucht
         </span>
       ) : (
@@ -106,7 +122,10 @@ function Plan({
             <CheckIcon
               className={featured ? 'text-white' : 'text-primary-400'}
             />
-            <span className="ml-4">{feature}</span>
+            <span
+              className="ml-4"
+              dangerouslySetInnerHTML={{ __html: feature }}
+            ></span>
           </li>
         ))}
       </ul>
@@ -130,13 +149,13 @@ export function Pricing() {
       aria-label="Pricing"
       className="relative overflow-hidden bg-secondary-950 py-20 sm:py-32"
     >
-      <div className="absolute bg-no-repeat -left-[7rem] -top-4 lg:-left-[69rem] lg:-top-4 h-[180%] w-[180%] bg-secondary-950">
+      <div className="absolute -left-[7rem] -top-4 h-[180%] w-[180%] bg-secondary-950 bg-no-repeat lg:-left-[69rem] lg:-top-4">
         <Image
           className="bg-no-repeat"
           src={backgroundImage}
           alt=""
           fill
-          style={{objectFit: "contain"}}
+          style={{ objectFit: 'contain' }}
           unoptimized
         />
       </div>
@@ -162,36 +181,39 @@ export function Pricing() {
           <Plan
             featured
             name={
-              <div className="text-silver-chalice-400 text-3xl line-through">
+              <div className="text-3xl text-silver-chalice-400 line-through">
                 199€
               </div>
             }
             price={
-              <div className='relative'>
+              <div className="relative">
                 149€/<span className="text-3xl">Monat</span>
-                <span className='text-xs absolute -bottom-2 -right-1'>exkl. MwSt.</span>
+                <span className="absolute -bottom-2 -right-1 text-xs">
+                  exkl. MwSt.
+                </span>
               </div>
             }
-            description="monatlich kündbar"
+            description="im Monatsabo"
             href="/register"
-            features={[]}
+            features={features}
           />
           <Plan
-
             name={
-              <div className="text-silver-chalice-300 text-3xl line-through">
+              <div className="text-3xl text-silver-chalice-300 line-through">
                 149€
               </div>
             }
             price={
-              <div className='relative'>
+              <div className="relative">
                 99€/<span className="text-3xl">Monat</span>
-                <span className='text-xs absolute -bottom-2 -right-1'>exkl. MwSt.</span>
+                <span className="absolute -bottom-2 -right-1 text-xs">
+                  exkl. MwSt.
+                </span>
               </div>
             }
-            description="im Abo"
+            description="im Jahresabo"
             href="/register"
-            features={[]}
+            features={features}
           />
           {/* <Plan
             name="Enterprise"
