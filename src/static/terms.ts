@@ -6,7 +6,7 @@ export const terms: Terms = {
     'DipMax Export GmbH (im Folgenden „Anbieter“) für die Nutzung von Arbispotter',
     'Stubenrauchstrasse 31 12161 Berlin, Telefon: +49 (0) 15115322541, E-Mail: info@dipmaxexport.com',
   ],
-  version: '(v1.0)',
+  version: '(v1.01)',
   date: 'November 2024',
   sections: [
     {
@@ -36,7 +36,7 @@ export const terms: Terms = {
         'Der Vertrag kommt durch den Abschluss eines Abonnements mit dem Anbieter zustanden.',
         'Der Kunde muss dazu einen Account auf der Plattform anlegen. Hierfür muss er die erforderlichen Pflichtangaben wie Namen, E-Mail-Adresse und Passwort machen. Anschließend wählt er das jeweils gewünschte Abo Modell aus dem Angebot des Anbieters aus und nimmt die Zahlung für das ausgewählte Abo Modell vor. Der Anbieter bindet den Zahlungsdienstleister Stripe für die Zahlungsabwicklung ein.',
         'Der Kunde kann sich nach erfolgter Bezahlung in die angebotene Software einloggen und das Angebot für die Dauer der Vertragslaufzeit nutzen.',
-        'Für die Nutzung im Rahmen einer eventuell vom Anbieter angebotenen Testphase gilt folgendes: Kunden, die noch nie registriert waren (Neukunden) kann der Anbieter nach Registrierung eine kostenfreien Testzugang für einen von ihm definierten Zeitraum einräumen Der Kunde kann nach Vertragsabschluss die von ihm abonnierte Software uneingeschränkt und vergütungsfrei nutzen. Sofern keine abweichende Vereinbarung getroffen wurde, beträgt die Testphase eine Woche. Möchte der Kunde die Software nach der Testphase nicht weiter nutzen, kann er das Vertragsverhältnis innerhalb der Testphase formlos kündigen. In diesem Fall endet das Vertragsverhältnis mit Ablauf der Testphase. Erfolgt keine Kündigung, läuft der Vertrag für den Bezugszeitraum ab dem Ende der Testphase weiter. Die vergütungsfreie Testphase kann von jedem Kunden einmalig genutzt werden. ',
+        'Für die Nutzung im Rahmen einer eventuell vom Anbieter angebotenen Testphase gilt folgendes: Kunden, die noch nie registriert waren (Neukunden) kann der Anbieter nach Registrierung eine kostenfreien Testzugang für einen von ihm definierten Zeitraum einräumen Der Kunde kann nach Vertragsabschluss die von ihm abonnierte Software uneingeschränkt und vergütungsfrei nutzen. Sofern keine abweichende Vereinbarung getroffen wurde, beträgt die Testphase beträgt 2 Tage. Möchte der Kunde die Software nach der Testphase nicht weiter nutzen, kann er das Vertragsverhältnis innerhalb der Testphase formlos kündigen. In diesem Fall endet das Vertragsverhältnis mit Ablauf der Testphase. Erfolgt keine Kündigung, läuft der Vertrag für den Bezugszeitraum ab dem Ende der Testphase weiter. Die vergütungsfreie Testphase kann von jedem Kunden einmalig genutzt werden. ',
         'Der Anbieter behält sich vor, die Plattform-Leistungen im Testzeitraum jederzeit in ihrer Ausgestaltung und ihrem Umfang zu ändern, z.B. einzuschränken oder einzustellen. ',
       ],
     },
