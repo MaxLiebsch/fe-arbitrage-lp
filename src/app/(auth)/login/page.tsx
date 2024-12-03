@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 }
 
 export default function Login() {
-  // redirect('/app/auth/login')
-  redirect('/waiting-list')
+  redirect('/app/auth/login')
+  // redirect('/waiting-list')
   return (
     <SlimLayout>
       <div className="flex">

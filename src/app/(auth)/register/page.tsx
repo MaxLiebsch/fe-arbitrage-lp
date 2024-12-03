@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 }
 
 export default function Register() {
-  // redirect('/app/auth/signup');
-  redirect('/waiting-list');
+  redirect('/app/auth/signup');
+  // redirect('/waiting-list');
   return (
     <SlimLayout>
       <div className="flex">
