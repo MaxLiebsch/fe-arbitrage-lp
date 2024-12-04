@@ -14,9 +14,9 @@ services:
           - "traefik.http.middlewares.lp-liveheaders.headers.customrequestheaders.X-Frame-Options=SAMEORIGIN"
         
           # Redirect router for arbispotter.com to www.arbispotter.com
-          - "traefik.http.routers.redirect.rule=Host(`arbispotter.com`)"
-          - "traefik.http.routers.redirect.entrypoints=https"
-          - "traefik.http.routers.redirect.middlewares=redirect-lp-to-www,default@file"
+          - "traefik.http.routers.lp-redirect.rule=Host(`arbispotter.com`)"
+          - "traefik.http.routers.lp-redirect.entrypoints=https"
+          - "traefik.http.routers.lp-redirect.middlewares=redirect-lp-to-www,default@file"
 
           # Middleware to handle the redirection
           - "traefik.http.middlewares.redirect-lp-to-www.redirectregex.regex=^https?://arbispotter\\.com(.*)"
