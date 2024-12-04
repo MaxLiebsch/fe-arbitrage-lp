@@ -16,10 +16,10 @@ services:
           # Redirect router for arbispotter.com to www.arbispotter.com
           - "traefik.http.routers.redirect.rule=Host(`arbispotter.com`)"
           - "traefik.http.routers.redirect.entrypoints=https"
-          - "traefik.http.routers.redirect.middlewares=redirect-to-www"
+          - "traefik.http.routers.redirect.middlewares=redirect-to-www,default@file"
 
           # Middleware to handle the redirection
-          - "traefik.http.middlewares.redirect-to-www.redirectregex.regex=^https://arbispotter.com(.*)"
+          - "traefik.http.middlewares.redirect-to-www.redirectregex.regex=^https?://arbispotter\\.com(.*)"
           - "traefik.http.middlewares.redirect-to-www.redirectregex.replacement=https://www.arbispotter.com$${1}"
           - "traefik.http.middlewares.redirect-to-www.redirectregex.permanent=true"
         
