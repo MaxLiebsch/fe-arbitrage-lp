@@ -19,6 +19,7 @@ const Page = () => {
             DipMax Export GmbH <br />
             Stubenrauchstrasse 31
             <br /> 12161 Berlin
+            <br /> +49 (0) 157 51202993
           </p>
           <h2 className="mt-10 text-lg font-semibold text-gray-900">
             Commercial register entry

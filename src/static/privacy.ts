@@ -110,7 +110,7 @@ export const privacy: Privacy = {
                 'Stubenrauchstrasse 31',
                 '12161 Berlin',
                 '',
-                'Telefon: +49 (0) 15115322541',
+                'Telefon: +49 (0) 157 51202993',
                 'E-Mail: info@dipmaxexport.com',
                 'Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.',
               ],
