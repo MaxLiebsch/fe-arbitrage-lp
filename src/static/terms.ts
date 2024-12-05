@@ -4,7 +4,7 @@ export const terms: Terms = {
   title: 'Allgemeine Geschäftsbedingungen',
   subParagraphs: [
     'DipMax Export GmbH (im Folgenden „Anbieter“) für die Nutzung von Arbispotter',
-    'Stubenrauchstrasse 31 12161 Berlin, Telefon: +49 (0) 15115322541, E-Mail: info@dipmaxexport.com',
+    'Stubenrauchstrasse 31 12161 Berlin, Telefon: +49 (0) 157 51202993, E-Mail: info@dipmaxexport.com',
   ],
   version: '(v1.01)',
   date: 'November 2024',
