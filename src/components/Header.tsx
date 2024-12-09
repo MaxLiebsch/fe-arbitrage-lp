@@ -113,13 +113,11 @@ export function Header() {
             </div>
           </div>
           <div className="flex items-center gap-x-5 md:gap-x-8">
-            {/* <div className="hidden md:block">
-              <NavLink href="/app/auth/signin">Log in</NavLink>
-            </div> */}
+            <Button href="/app/auth/signin" color="blue">
+              Login
+            </Button>
             <Button href="/register" color="blue">
-              <span>
-                Jetzt <span className="hidden lg:inline">Platz sichern</span>
-              </span>
+              <span>Kostenlos testen</span>
             </Button>
             <div className="-mr-1 md:hidden">
               <MobileNavigation />

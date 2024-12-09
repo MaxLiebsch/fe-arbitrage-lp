@@ -3,6 +3,7 @@ import clsx from 'clsx'
 
 import '@/styles/tailwind.css'
 import { type Metadata } from 'next'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: {
@@ -40,6 +41,7 @@ export default function RootLayout({
       )}
     >
       <body className="flex h-full flex-col">{children}</body>
+      <Script src="https://scripts.simpleanalyticscdn.com/latest.js"  />
     </html>
   )
 }
