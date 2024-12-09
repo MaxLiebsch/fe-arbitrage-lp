@@ -11,8 +11,8 @@ const baseStyles = {
 const variantStyles = {
   solid: {
     slate:
-      'bg-primary-400 text-secondary-900 hover:bg-primary-700 hover:text-secondary-700 active:bg-primary-800 active:text-primary-300 focus-visible:outline-primary-400',
-    blue: 'bg-primary-400 text-secondary-900 hover:bg-primary-700 hover:text-secondary-700 active:bg-primary-800 active:text-primary-300 focus-visible:outline-primary-400',
+      'bg-primary-400 text-secondary-900 hover:bg-primary-700 hover:text-white active:bg-primary-800 active:text-primary-300 focus-visible:outline-primary-400',
+    blue: 'bg-primary-400 text-secondary-900 hover:bg-primary-700 hover:text-white active:bg-primary-800 active:text-primary-300 focus-visible:outline-primary-400',
     white:
       'bg-white text-secondary-900 hover:bg-primary-50 active:bg-primary-200 active:text-primary-600 focus-visible:outline-white',
   },
