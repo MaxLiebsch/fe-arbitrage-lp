@@ -23,7 +23,7 @@ const nextConfig = {
         destination: `${APP_URL}/app/:path*`,
       },
     ]
-  },
+  } 
 }
 
 
