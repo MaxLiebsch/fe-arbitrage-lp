@@ -22,14 +22,14 @@ export function CallToAction() {
         <div className="mx-auto max-w-5xl text-center">
           <h2 className="font-display text-3xl tracking-tight text-secondary-950 sm:text-4xl">
             Transformiere dein Arbitrage-Business und sei der Konkurrenz mit
-            arbispotter einen Schritt voraus! 
+            arbispotter einen Schritt voraus!
           </h2>
           <p className="mt-4 text-lg tracking-tight text-secondary-950">
-            Registriere dich jetzt und
-            erhalten exklusive Einblicke und Updates zur Plattform.
+            Registriere dich jetzt und erhalten exklusive Einblicke und Updates
+            zur Plattform.
           </p>
           <Button href="/register" color="slate" className="mt-10">
-            Jetzt starten
+            Jetzt kostenlos starten
           </Button>
         </div>
       </Container>

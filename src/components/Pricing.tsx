@@ -119,7 +119,7 @@ function Plan({
         className="mt-8"
         aria-label={`Get started with the ${name} plan for ${price}`}
       >
-        Jetzt Platz sichern
+        Kostenlos starten
       </Button>
     </section>
   )
@@ -133,7 +133,6 @@ export function Pricing() {
   //   .then(res=>res.json())
   //   .then(data=>setPlans(data.data))
   // },[])
-
 
   return (
     <section
@@ -171,7 +170,7 @@ export function Pricing() {
         </div>
         <div className="-mx-4 mt-16 grid max-w-2xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-3 xl:mx-0 xl:gap-x-8">
           <Plan
-            featured='Early Bird'
+            featured="Early Bird"
             name={
               <div className="text-3xl text-silver-chalice-400 line-through">
                 149€
