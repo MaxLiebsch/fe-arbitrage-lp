@@ -1,4 +1,5 @@
 const { withSentryConfig } = require("@sentry/nextjs");
+const { redirect } = require("next/dist/server/api-utils");
 /** @type {import('next').NextConfig} */
 
 const env = process.env.NODE_ENV
@@ -18,6 +19,10 @@ if (env == 'development') {
 const nextConfig = {
   async rewrites() {
     return [
+      {
+        source: '/api/simple.gif/:path*',
+        destination: 'https://queue.simpleanalyticscdn.com/:path*',
+      },
       {
         source: '/app/:path*',
         destination: `${APP_URL}/app/:path*`,
