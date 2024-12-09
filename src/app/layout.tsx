@@ -10,8 +10,7 @@ export const metadata: Metadata = {
     template: '%s - Arbispotter',
     default: 'Arbispotter - Move Fast, Earn Easy',
   },
-  description:
-    'Wir machen Product Sourcing schnell, einfach und intelligent.',
+  description: 'Wir machen Product Sourcing schnell, einfach und intelligent.',
 }
 
 const inter = Inter({
@@ -41,7 +40,7 @@ export default function RootLayout({
       )}
     >
       <body className="flex h-full flex-col">{children}</body>
-      <Script src="https://scripts.simpleanalyticscdn.com/latest.js"  />
+      <Script src="/js/latest.js" />
     </html>
   )
 }
