@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/app/:path*",
-      "destination": "https://arbispotter-app-liebschdipmaxexports-projects.vercel.app/app/:path*"
-    }
-  ]
-}
