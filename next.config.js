@@ -5,7 +5,7 @@ const { redirect } = require("next/dist/server/api-utils");
 const env = process.env.NODE_ENV
 const environment = process.env.ENVIRONMENT
 let containerName =
-  environment === 'STAGING' ? 'staging-staging-1' : 'live-live-1'
+  environment === 'STAGING' ? 'staging.arbispotter.com' : 'www.arbispotter.com'
 
 
 let APP_URL
@@ -13,16 +13,12 @@ let APP_URL
 if (env == 'development') {
   APP_URL = `http://localhost:3000`
 } else if (env == 'production') {
-  APP_URL = `http://${containerName}:3000`
+  APP_URL = `https://${containerName}`
 }
 
 const nextConfig = {
   async rewrites() {
     return [
-      {
-        source: '/api/simple.gif/:path*',
-        destination: 'https://queue.simpleanalyticscdn.com/:path*',
-      },
       {
         source: '/app/:path*',
         destination: `${APP_URL}/app/:path*`,
