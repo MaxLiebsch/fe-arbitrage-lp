@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/app/:path*",
-      "destination": "https://@NEXT_PUBLIC_APP_URL/app/:path*"
+      "destination": "https://arbispotter-app-git-staging-liebschdipmaxexports-projects.vercel.app/app/:path*"
     }
   ]
 }
