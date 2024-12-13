@@ -4,8 +4,7 @@ import clsx from 'clsx'
 import '@/styles/tailwind.css'
 import { type Metadata } from 'next'
 import Script from 'next/script'
-import { Analytics } from '@vercel/analytics/react'
-
+import PlausibleProvider from 'next-plausible'
 export const metadata: Metadata = {
   title: {
     template: '%s - Arbispotter',
@@ -40,11 +39,12 @@ export default function RootLayout({
         lexend.variable,
       )}
     >
+     <head>
+        <PlausibleProvider domain={process.env.NEXT_PUBLIC_DOMAIN!} />
+      </head>
       <body className="flex h-full flex-col">
-        {children}
-        <Analytics />
+          {children}
       </body>
-      <Script src="/js/latest.js" />
     </html>
   )
 }
