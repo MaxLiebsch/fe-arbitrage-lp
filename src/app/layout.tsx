@@ -4,6 +4,7 @@ import clsx from 'clsx'
 import '@/styles/tailwind.css'
 import { type Metadata } from 'next'
 import Script from 'next/script'
+import PlausibleProvider from 'next-plausible'
 
 export const metadata: Metadata = {
   title: {
@@ -39,6 +40,12 @@ export default function RootLayout({
         lexend.variable,
       )}
     >
+       <head>
+        <PlausibleProvider
+          domain={process.env.NEXT_PUBLIC_DOMAIN!}
+          enabled={true}
+        />
+      </head>
       <body className="flex h-full flex-col">{children}</body>
       <Script src="/js/latest.js" />
     </html>
