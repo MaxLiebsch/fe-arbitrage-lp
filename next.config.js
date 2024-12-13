@@ -1,4 +1,5 @@
 const { withSentryConfig } = require("@sentry/nextjs");
+const { withPlausibleProxy } = require("next-plausible");
 const { redirect } = require("next/dist/server/api-utils");
 /** @type {import('next').NextConfig} */
 
@@ -16,7 +17,7 @@ if (env == 'development') {
   APP_URL = `http://${containerName}:3000`
 }
 
-const nextConfig = {
+const nextConfig = withPlausibleProxy()({
   async rewrites() {
     return [
       {
@@ -29,7 +30,7 @@ const nextConfig = {
       },
     ]
   } 
-}
+})
 
 
 
