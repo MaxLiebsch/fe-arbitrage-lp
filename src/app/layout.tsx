@@ -40,14 +40,14 @@ export default function RootLayout({
     >
       <head>
         <PlausibleProvider
+          domain={process.env.NEXT_PUBLIC_DOMAIN!}
+          customDomain={process.env.NEXT_PUBLIC_PLAUSIBLE_URL!}
           selfHosted={true}
           enabled={true}
           trackOutboundLinks={true}
           taggedEvents={true}
-          trackLocalhost={true}
+          trackLocalhost={process.env.NODE_ENV === 'development'}
           revenue={true}
-          domain={process.env.NEXT_PUBLIC_DOMAIN!}
-          customDomain={process.env.NEXT_PUBLIC_PLAUSIBLE_URL!}
         />
       </head>
       <body className="flex h-full flex-col">{children}</body>
