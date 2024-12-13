@@ -3,7 +3,6 @@ import clsx from 'clsx'
 
 import '@/styles/tailwind.css'
 import { type Metadata } from 'next'
-import Script from 'next/script'
 import PlausibleProvider from 'next-plausible'
 export const metadata: Metadata = {
   title: {
@@ -39,12 +38,19 @@ export default function RootLayout({
         lexend.variable,
       )}
     >
-     <head>
-        <PlausibleProvider domain={process.env.NEXT_PUBLIC_DOMAIN!} />
+      <head>
+        <PlausibleProvider
+          selfHosted={true}
+          enabled={true}
+          trackOutboundLinks={true}
+          taggedEvents={true}
+          trackLocalhost={true}
+          revenue={true}
+          domain={process.env.NEXT_PUBLIC_DOMAIN!}
+          customDomain={process.env.NEXT_PUBLIC_PLAUSIBLE_URL!}
+        />
       </head>
-      <body className="flex h-full flex-col">
-          {children}
-      </body>
+      <body className="flex h-full flex-col">{children}</body>
     </html>
   )
 }
