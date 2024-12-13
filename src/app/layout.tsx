@@ -43,7 +43,7 @@ export default function RootLayout({
           domain={process.env.NEXT_PUBLIC_DOMAIN!}
           customDomain={process.env.NEXT_PUBLIC_PLAUSIBLE_URL!}
           selfHosted={true}
-          // enabled={true}
+          enabled={true}
           // trackOutboundLinks={true}
           // taggedEvents={true}
           // trackLocalhost={process.env.NODE_ENV === 'development'}
