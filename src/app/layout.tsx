@@ -44,10 +44,10 @@ export default function RootLayout({
           customDomain={process.env.NEXT_PUBLIC_PLAUSIBLE_URL!}
           selfHosted={true}
           enabled={true}
-          // trackOutboundLinks={true}
-          // taggedEvents={true}
-          // trackLocalhost={process.env.NODE_ENV === 'development'}
-          // revenue={true}
+          trackOutboundLinks={true}
+          taggedEvents={true}
+          trackLocalhost={process.env.NODE_ENV === 'development'}
+          revenue={true}
         />
       </head>
       <body className="flex h-full flex-col">{children}</body>
