@@ -65,8 +65,8 @@ const Section = ({ section }: { section: TermsSection }) => {
 
 const TermsComponent = () => {
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
-      <h1 className="mb-4 text-center text-3xl font-bold text-gray-800">
+    <div className="min-h-screen bg-gray-50 p-8 break-words">
+      <h1 className="mb-4 text-center text-2xl md:text-3xl font-bold text-gray-800 break-words">
         {terms.title}
       </h1>
       {terms.subParagraphs.map((paragraph, index) => (

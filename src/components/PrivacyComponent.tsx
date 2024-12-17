@@ -148,8 +148,8 @@ const Section = ({ section }: { section: PrivacySection }) => {
 
 const PrivacyComponent = () => {
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
-      <h1 className="mb-4 text-center text-3xl font-bold text-gray-800">
+    <div className="min-h-screen bg-gray-50 p-8 break-words">
+      <h1 className="mb-4 text-center text-2xl md:text-3xl font-bold text-gray-800">
         {privacy.title}
       </h1>
       <div>

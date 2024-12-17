@@ -89,7 +89,13 @@ function MobileNavigation() {
             {/* <MobileNavLink href="#testimonials">Testimonials</MobileNavLink> */}
             <MobileNavLink href="/#pricing">Preise</MobileNavLink>
             <hr className="m-2 border-slate-300/40" />
-            <MobileNavLink href="/app/auth/signin">Login</MobileNavLink>
+            <Button href="/app/auth/signin" color="blue">
+              Login
+            </Button>
+            <MobileNavLink href="/privacy">
+              Datenschutz
+            </MobileNavLink>
+            <MobileNavLink href="/terms">AGB</MobileNavLink>
           </Popover.Panel>
         </Transition.Child>
       </Transition.Root>
