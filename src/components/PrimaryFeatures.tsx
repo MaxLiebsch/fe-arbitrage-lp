@@ -20,6 +20,7 @@ const features = [
     description: `Vergiss stundenlanges Durchsuchen verschiedener Online-Händler und Prospekte. arbispotter reduziert den Sourcing-Prozess auf das Wesentliche: den Einkauf! Mit uns erkennst du auf einen Blick, welche Händler oder Shops Artikel anbieten, die du mit Gewinn auf Amazon, eBay oder anderen Plattformen verkaufen kannst.`,
     image: screenshot1,
     mobile: screenshot1Mobil,
+    mobileObjectPosition: 'object-[0px]',
   },
   {
     title: 'Vorsprung durch fundierte Daten.',
@@ -27,12 +28,14 @@ const features = [
 `,
     image: screenshot2,
     mobile: screenshot2Mobil,
+    mobileObjectPosition: 'object-[-1px]',
   },
   {
     title: 'Alles auf einen Blick',
     description: `Mit unserer einzigartigen Fähigkeit, Online-Angebote  mit Bezug auf eBay und Amazon zu analysieren, erhältst du Zugang zu Markteinblicken, die es nirgendwo gibt. Unser Tool deckt ein breites Spektrum an Quellen ab und bietet eine unvergleichliche Perspektive auf potenzielle Arbitrage-Möglichkeiten.`,
     image: screenshot3,
     mobile: screenshot3Mobil,
+    mobileObjectPosition: 'object-[0px]',
   },
 ]
 
@@ -137,7 +140,9 @@ export function PrimaryFeatures() {
                       </div> */}
 
                       <Image
-                        className="w-full object-[0px] md:object-[-4px]"
+                        className={`w-full ${
+                          isLargeScreen ? '' : feature.mobileObjectPosition
+                        } md:object-[-4px]}`}
                         src={isLargeScreen ? feature.image : feature.mobile}
                         alt="Screenshot of the app"
                         priority
