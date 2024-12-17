@@ -1,10 +1,13 @@
 import { CallToAction } from '@/components/CallToAction'
+import { Faqs } from '@/components/Faqs'
 import { FAQSimple } from '@/components/FAQSimple'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { Hero } from '@/components/Hero'
 import { Pricing } from '@/components/Pricing'
 import { PrimaryFeatures } from '@/components/PrimaryFeatures'
+import { SecondaryFeatures } from '@/components/SecondaryFeatures'
+import { Testimonials } from '@/components/Testimonials'
 import Script from 'next/script'
 
 export default function Home() {
@@ -17,6 +20,8 @@ export default function Home() {
         <CallToAction />
         <Pricing />
         <FAQSimple />
+        {/* <Faqs /> */}
+        {/* <Testimonials/> */}
         <Script id="chatwood">
           {`
       (function(d,t) {
