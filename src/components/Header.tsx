@@ -88,8 +88,14 @@ function MobileNavigation() {
             <MobileNavLink href="/#features">Features</MobileNavLink>
             {/* <MobileNavLink href="#testimonials">Testimonials</MobileNavLink> */}
             <MobileNavLink href="/#pricing">Preise</MobileNavLink>
-            {/* <hr className="m-2 border-slate-300/40" /> */}
-            {/* <MobileNavLink href="/app/auth/signin">Log in</MobileNavLink> */}
+            <hr className="m-2 border-slate-300/40" />
+            <Button href="/app/auth/signin" color="blue">
+              Login
+            </Button>
+            <MobileNavLink href="/privacy">
+              Datenschutz
+            </MobileNavLink>
+            <MobileNavLink href="/terms">AGB</MobileNavLink>
           </Popover.Panel>
         </Transition.Child>
       </Transition.Root>
@@ -112,16 +118,16 @@ export function Header() {
               <NavLink href="/#pricing">Preise</NavLink>
             </div>
           </div>
-          <div className="flex items-center gap-x-5 md:gap-x-8">
+          <div className="hidden items-center gap-x-5 md:flex md:gap-x-8">
             <Button href="/app/auth/signin" color="blue">
               Login
             </Button>
             <Button href="/register" color="blue">
               <span>Kostenlos testen</span>
             </Button>
-            <div className="-mr-1 md:hidden">
-              <MobileNavigation />
-            </div>
+          </div>
+          <div className="-mr-1 md:hidden">
+            <MobileNavigation />
           </div>
         </nav>
       </Container>
