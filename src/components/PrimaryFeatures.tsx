@@ -131,20 +131,18 @@ export function PrimaryFeatures() {
                         {feature.description}
                       </p>
                     </div>
-                    <div className="relative mt-10 w-[378px] rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
+                    <div className="relative mt-10 w-[376px] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
                       {/* <div className="absolute h-full w-full flex items-center justify-center text-black">
                         <div className='text-black text-center text-3xl z-50'>Coming soon :)</div>
                       </div> */}
-        
+
                       <Image
-                        className="w-full object-[0px] md:object-[-4px] overflow-x-scroll"
+                        className="w-full object-[0px] md:object-[-4px]"
                         src={isLargeScreen ? feature.image : feature.mobile}
                         alt="Screenshot of the app"
                         priority
-                        sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 378px"
+                        sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 376px"
                       />
-
-                    
                     </div>
                   </Tab.Panel>
                 ))}
