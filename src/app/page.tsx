@@ -23,8 +23,8 @@ export default function Home() {
         <CallToAction />
         <Pricing />
         <FAQSimple />
-        {/* <Faqs /> */}
-        {/* <Testimonials/> */}
+        <Faqs />
+        <Testimonials/>
         <Script id="chatwood">
           {`
       (function(d,t) {
