@@ -1,4 +1,5 @@
 import { CallToAction } from '@/components/CallToAction'
+import Deals from '@/components/Deals'
 import { Faqs } from '@/components/Faqs'
 import { FAQSimple } from '@/components/FAQSimple'
 import { Footer } from '@/components/Footer'
@@ -8,14 +9,16 @@ import { Pricing } from '@/components/Pricing'
 import { PrimaryFeatures } from '@/components/PrimaryFeatures'
 import { SecondaryFeatures } from '@/components/SecondaryFeatures'
 import { Testimonials } from '@/components/Testimonials'
+import useIsScreenSize from '@/hooks/useIsScreenSize'
 import Script from 'next/script'
 
 export default function Home() {
   return (
-    <> 
+    <>
       <Header />
-      <main>
+      <main className="relative">
         <Hero />
+        <Deals />
         <PrimaryFeatures />
         <CallToAction />
         <Pricing />
