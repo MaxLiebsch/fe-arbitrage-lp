@@ -19,6 +19,7 @@ if (env == 'development') {
 
 const nextConfig = withPlausibleProxy()({
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
