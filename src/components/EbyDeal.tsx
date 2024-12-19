@@ -96,13 +96,13 @@ const EbyDeal = async ({ ean, shop }: { ean: string; shop: string }) => {
             </span>
           </div>
 
-          <div className="mb-4 flex flex-wrap items-center justify-center gap-3 text-sm">
+          <div className="mb-4 flex flex-wrap items-start justify-start gap-3 text-sm">
             <p className="flex items-center gap-1">
               <span className="font-medium">Einkauf:</span> {prc} €
             </p>
             <p className="flex items-center gap-1">
               <span className="font-medium">Verkauf:</span>
-              <span className="font-semibold text-red-600">{e_prc} €</span>
+              <span className="font-semibold">{e_prc} €</span>
             </p>
           </div>
           {ebyCategories && ebyCategories.length ? (

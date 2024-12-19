@@ -85,13 +85,13 @@ const AznDeal = async ({ ean, shop }: { ean: string; shop: string }) => {
             </span>
           </div>
 
-          <div className="mb-4 flex flex-wrap items-center justify-center gap-3 text-sm">
+          <div className="mb-4 flex flex-wrap items-start justify-start gap-3 text-sm">
             <p className="flex items-center gap-1">
               <span className="font-medium">Einkauf:</span> {product.prc} €
             </p>
             <p className="flex items-center gap-1">
               <span className="font-medium">Verkauf:</span>
-              <span className="font-semibold text-red-600">
+              <span className="font-semibold">
                 {product.a_prc} €
               </span>
             </p>
