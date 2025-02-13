@@ -1,6 +1,6 @@
 {
   "name": "tailwindui-salient",
-  "version": "0.1.005",
+  "version": "0.1.0065",
   "private": true,
   "scripts": {
     "dev": "next dev",

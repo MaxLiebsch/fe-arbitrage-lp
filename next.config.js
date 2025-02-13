@@ -17,6 +17,12 @@ if (env == 'development') {
   APP_URL = `https://${containerName}`
 }
 
+// if (env == 'development') {
+//   APP_URL = `http://localhost:3000`
+// } else if (env == 'production') {
+//   APP_URL = `https://${containerName}`
+// }
+
 const nextConfig = withPlausibleProxy()({
   images: {
     unoptimized: true,
