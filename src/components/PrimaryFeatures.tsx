@@ -44,7 +44,6 @@ export function PrimaryFeatures() {
     'horizontal',
   )
   const isLargeScreen = useIsLargeScreen()
-  console.log('isLargeScreen:', isLargeScreen)
 
   useEffect(() => {
     let lgMediaQuery = window.matchMedia('(min-width: 1024px)')

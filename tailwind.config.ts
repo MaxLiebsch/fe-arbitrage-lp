@@ -60,7 +60,7 @@ export default {
           '800': '#676767',
           '900': '#545454',
           '950': '#363636',
-      },
+        },
       },
       borderRadius: {
         '4xl': '2rem',
@@ -71,6 +71,11 @@ export default {
       },
       maxWidth: {
         '2xl': '40rem',
+      },
+      screens: {
+        '3xl': '1719px',
+        '4xl': '2560px',
+        '5xl': '3840px',
       },
     },
   },

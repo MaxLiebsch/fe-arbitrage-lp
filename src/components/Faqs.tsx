@@ -2,6 +2,7 @@ import Image from 'next/image'
 
 import { Container } from '@/components/Container'
 import backgroundImage from '@/images/background-faqs.jpg'
+import { getStoryblokApi } from '@storyblok/react/rsc'
 
 const faqs = [
   [
@@ -57,7 +58,16 @@ const faqs = [
   ],
 ]
 
-export function Faqs() {
+export async function Faqs() {
+  const { data } = await fetchData()
+  const faqs = data.story?.content?.body
+  if (!faqs?.length) {
+    return null
+  }
+  let _faqs = faqs.reduce((acc: any, testimonial: any, index: any) => {
+    acc.push(testimonial.faqs)
+    return acc
+  }, [])
   return (
     <section
       id="faq"
@@ -89,10 +99,10 @@ export function Faqs() {
           role="list"
           className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3"
         >
-          {faqs.map((column, columnIndex) => (
+          {_faqs.map((column: any, columnIndex: any) => (
             <li key={columnIndex}>
               <ul role="list" className="flex flex-col gap-y-8">
-                {column.map((faq, faqIndex) => (
+                {column.map((faq: any, faqIndex: any) => (
                   <li key={faqIndex}>
                     <h3 className="font-display text-lg leading-7 text-slate-900">
                       {faq.question}
@@ -107,4 +117,13 @@ export function Faqs() {
       </Container>
     </section>
   )
+}
+
+export async function fetchData() {
+  let sbParams = { version: process.env.VERSION as 'draft' | 'published' }
+
+  const storyblokApi = getStoryblokApi()
+  return storyblokApi.get(`cdn/stories/faq`, sbParams, {
+    cache: 'no-cache',
+  })
 }

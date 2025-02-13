@@ -1,76 +1,86 @@
-const { withSentryConfig } = require("@sentry/nextjs");
-const { withPlausibleProxy } = require("next-plausible");
-const { redirect } = require("next/dist/server/api-utils");
+const { withSentryConfig } = require('@sentry/nextjs')
+const { withPlausibleProxy } = require('next-plausible')
+const { redirect } = require('next/dist/server/api-utils')
 /** @type {import('next').NextConfig} */
 
 const env = process.env.NODE_ENV
 const environment = process.env.ENVIRONMENT
+const isVercel = process.env.VERCEL
 let containerName =
   environment === 'STAGING' ? 'staging-staging-1' : 'live-live-1'
-
 
 let APP_URL
 
 if (env == 'development') {
   APP_URL = `http://localhost:3000`
 } else if (env == 'production') {
-  APP_URL = `http://${containerName}:3000`
+  APP_URL = `https://${containerName}`
 }
 
+// if (env == 'development') {
+//   APP_URL = `http://localhost:3000`
+// } else if (env == 'production') {
+//   APP_URL = `https://${containerName}`
+// }
+
 const nextConfig = withPlausibleProxy()({
+  images: {
+    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
+  },
   async rewrites() {
-    return [
-      {
-        source: '/api/simple.gif/:path*',
-        destination: 'https://queue.simpleanalyticscdn.com/:path*',
-      },
-      {
-        source: '/app/:path*',
-        destination: `${APP_URL}/app/:path*`,
-      },
-    ]
-  } 
+    if (isVercel) {
+      return []
+    } else {
+      return [
+        {
+          source: '/app/:path*',
+          destination: `${APP_URL}/app/:path*`,
+        },
+      ]
+    }
+  },
 })
 
+module.exports = withSentryConfig(nextConfig, {
+  // For all available options, see:
+  // https://github.com/getsentry/sentry-webpack-plugin#options
 
+  org: 'dipmaxtech',
+  project: 'arbispotter-lp',
 
-module.exports = withSentryConfig(
-  nextConfig,
-  {
-    // For all available options, see:
-    // https://github.com/getsentry/sentry-webpack-plugin#options
+  // Only print logs for uploading source maps in CI
+  silent: !process.env.CI,
 
-    org: "dipmaxtech",
-    project: "arbispotter-lp",
+  // For all available options, see:
+  // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
 
-    // Only print logs for uploading source maps in CI
-    silent: !process.env.CI,
+  // Upload a larger set of source maps for prettier stack traces (increases build time)
+  widenClientFileUpload: true,
 
-    // For all available options, see:
-    // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
+  // Transpiles SDK to be compatible with IE11 (increases bundle size)
+  transpileClientSDK: true,
 
-    // Upload a larger set of source maps for prettier stack traces (increases build time)
-    widenClientFileUpload: true,
+  // Uncomment to route browser requests to Sentry through a Next.js rewrite to circumvent ad-blockers.
+  // This can increase your server load as well as your hosting bill.
+  // Note: Check that the configured route will not match with your Next.js middleware, otherwise reporting of client-
+  // side errors will fail.
+  // tunnelRoute: "/monitoring",
 
-    // Transpiles SDK to be compatible with IE11 (increases bundle size)
-    transpileClientSDK: true,
+  // Hides source maps from generated client bundles
+  hideSourceMaps: true,
 
-    // Uncomment to route browser requests to Sentry through a Next.js rewrite to circumvent ad-blockers.
-    // This can increase your server load as well as your hosting bill.
-    // Note: Check that the configured route will not match with your Next.js middleware, otherwise reporting of client-
-    // side errors will fail.
-    // tunnelRoute: "/monitoring",
+  // Automatically tree-shake Sentry logger statements to reduce bundle size
+  disableLogger: true,
 
-    // Hides source maps from generated client bundles
-    hideSourceMaps: true,
-
-    // Automatically tree-shake Sentry logger statements to reduce bundle size
-    disableLogger: true,
-
-    // Enables automatic instrumentation of Vercel Cron Monitors. (Does not yet work with App Router route handlers.)
-    // See the following for more information:
-    // https://docs.sentry.io/product/crons/
-    // https://vercel.com/docs/cron-jobs
-    automaticVercelMonitors: true,
-  }
-);
+  // Enables automatic instrumentation of Vercel Cron Monitors. (Does not yet work with App Router route handlers.)
+  // See the following for more information:
+  // https://docs.sentry.io/product/crons/
+  // https://vercel.com/docs/cron-jobs
+  automaticVercelMonitors: true,
+})

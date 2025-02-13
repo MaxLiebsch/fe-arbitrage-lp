@@ -47,7 +47,7 @@ export function Hero() {
           <span className="ml-3">Watch video</span>
         </Button> */}
       </div>
-      <div className="mt-36 lg:mt-72">
+      <div className="mt-6 xl:mt-10 2xl:mt-16 3xl:mt-72">
         {/* <p className="font-display text-base text-slate-900">
           Trusted by these six companies so far
         </p> */}
