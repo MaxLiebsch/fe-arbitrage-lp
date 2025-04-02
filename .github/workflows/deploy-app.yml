@@ -5,25 +5,6 @@ on:
       - staging
       - main
 jobs:
-  deploy-lp-staging:
-    if: ${{ github.ref_name == 'staging' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy lp-staging
-        timeout-minutes: 30
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{secrets.HOST}}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.DEPLOY_FE_PK }}
-          passphrase: ${{ secrets.PASSPHRASE }}
-          command_timeout: 30m
-          script: |
-            docker builder prune -f
-            git --work-tree=/etc/docker/container/lp --git-dir=/etc/docker/container/lp/.git reset --hard
-            git --work-tree=/etc/docker/container/lp --git-dir=/etc/docker/container/lp/.git pull
-            cd /etc/docker/container/lp
-            docker compose -f docker-compose.lp-staging.yml up --build -d
   deploy-lp-live:
     if: ${{ github.ref_name == 'main' }}
     runs-on: ubuntu-latest
