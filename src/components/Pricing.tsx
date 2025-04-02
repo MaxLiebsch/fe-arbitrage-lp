@@ -11,7 +11,7 @@ const features = [
   <ul>
   <li>- Amazon</li>
   <li>- Ebay</li>
-  <li>- Kaufland (Coming soon)</li></ul>`,
+  <li>- Kaufland (soon)</li></ul>`,
 
   'Onlineshop-Vergleich (über 1,4 Millionen Produkte)',
   'Sales-Monitor',
