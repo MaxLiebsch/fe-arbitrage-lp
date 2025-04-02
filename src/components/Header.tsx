@@ -1,9 +1,9 @@
 'use client'
 
-import { Fragment } from 'react'
-import Link from 'next/link'
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
+import Link from 'next/link'
+import { Fragment } from 'react'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
@@ -89,9 +89,9 @@ function MobileNavigation() {
             {/* <MobileNavLink href="#testimonials">Testimonials</MobileNavLink> */}
             <MobileNavLink href="/#pricing">Preise</MobileNavLink>
             <hr className="m-2 border-slate-300/40" />
-            <Button href="/app/auth/signin" color="blue">
+            {/* <Button href="/app/auth/signin" color="blue">
               Login
-            </Button>
+            </Button> */}
             <MobileNavLink href="/privacy">
               Datenschutz
             </MobileNavLink>
@@ -119,9 +119,9 @@ export function Header() {
             </div>
           </div>
           <div className="hidden items-center gap-x-5 md:flex md:gap-x-8">
-            <Button href="/app/auth/signin" color="blue">
+            {/* <Button href="/app/auth/signin" color="blue">
               Login
-            </Button>
+            </Button> */}
             <Button href="/register" color="blue">
               <span>Kostenlos testen</span>
             </Button>
